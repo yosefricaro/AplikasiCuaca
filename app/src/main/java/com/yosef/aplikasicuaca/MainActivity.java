@@ -1,9 +1,7 @@
 package com.yosef.aplikasicuaca;
 
-
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -17,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new Fragment())
+                .replace(R.id.content_frame, new ForecastFragment())
                 .commit();
 
     }
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
         } else {
             super.onBackPressed();
-            return;
         }
     }
 }

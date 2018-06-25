@@ -9,6 +9,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "URI", "\"http://api.openweathermap.org/data/2.5/\"")
+        buildTypes.each {
+            it.buildConfigField 'String', 'API_KEY', OpenWeatherApiKey
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
